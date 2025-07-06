@@ -34,7 +34,7 @@ h1 {
     background-color: rgb(20, 95, 141);
     border: 3px solid black;
     border-radius: 10px;
-    margin-top: 45px;
+    margin-top: 20px;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
@@ -42,9 +42,10 @@ h1 {
 
 /* Display for answers and numbers */
 div #display {
+    overflow: scroll;
     box-sizing: border-box;
     width: 360px;
-    height: 60px;
+    height: 85px;
     background-color: white;
     border: 3px solid black;
     border-radius: 10px;
@@ -55,39 +56,46 @@ div #display {
 .text1,       
 .text2 {
     text-align: right;
-    font-family: sans-serif;
+    font-family: "Outfit", sans-serif;
     margin-right: 10px;
+    white-space: normal;
+    word-break: break-all;
 }
 
 .text1 {
     margin-top: 3px;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: 400;
 }
 
 .text2 {
-    margin-top: 4px;
+    margin-top: 12px;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 30px;
     margin-bottom: 2px;
 }
 
 /* Buttons */
-#calculator #control {
+#calculator #buttons {
     margin-top: 30px;
     width: 360px;
     display: flex;
-    gap: 40px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
 button {
     height: 50px;
-    width: 60px;
-    background-color: yellow;
+    width: 70px;
+    background-color: rgb(186, 83, 100);
     box-shadow: 0 4px 10px rgba(107, 107, 107, 0.4);
     border-radius: 10px;
     font: inherit;
-    flex: 0 0 60px;
+    font-size: 20px;
+    flex: 1 0 70px;
+}
+
+#twice {
+    flex: 1 0 165px;
 }
 
