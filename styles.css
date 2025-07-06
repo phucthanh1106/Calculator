@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Adjust the title */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    flex-direction: column;
+    background-image: url("background.jpg");
+    background-size: cover;         /* Fit entire screen */
+    background-repeat: no-repeat;   /* Prevent tiling */
+    background-position: center;    /* Center the image */
+}
+
+h1 {
+    display: flex;
+    margin: 30px;
+    font-size: 50px;
+    font-weight: 700;
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+/* Frame for the calculator */
+#calculator {
+    display: flex;
+    width: 400px;
+    height: 500px;
+    background-color: rgb(20, 95, 141);
+    border: 3px solid black;
+    border-radius: 10px;
+    margin-top: 45px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Display for answers and numbers */
+div #display {
+    box-sizing: border-box;
+    width: 360px;
+    height: 60px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Texts of the display */
+.text1,       
+.text2 {
+    text-align: right;
+    font-family: sans-serif;
+    margin-right: 10px;
+}
+
+.text1 {
+    margin-top: 3px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.text2 {
+    margin-top: 4px;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 2px;
+}
+
+/* Buttons */
+#calculator #control {
+    margin-top: 30px;
+    width: 360px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+button {
+    height: 50px;
+    width: 60px;
+    background-color: yellow;
+    box-shadow: 0 4px 10px rgba(107, 107, 107, 0.4);
+    border-radius: 10px;
+    font: inherit;
+    flex: 0 0 60px;
+}
+
