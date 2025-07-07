@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* Adjust the title */
+/* Adjust the title and body */
 body {
     display: flex;
     justify-content: center;
@@ -15,6 +15,15 @@ body {
     background-size: cover;         /* Fit entire screen */
     background-repeat: no-repeat;   /* Prevent tiling */
     background-position: center;    /* Center the image */
+}
+
+body::before {
+    content: "";                             /* Required to show the pseudo-element */
+    position: fixed;                         /* Sticks to the screen, not scrollable */
+    inset: 0;                                /* Shorthand for top: 0; right: 0; bottom: 0; left: 0; */
+    background-color: rgba(0, 0, 0, 0.05);   /* Slight transparent dark layer */
+    backdrop-filter: blur(2px);             /* Blurs whatever is behind it */
+    z-index: -1;                             /* Puts it behind all normal content */
 }
 
 h1 {
@@ -31,13 +40,14 @@ h1 {
     display: flex;
     width: 400px;
     height: 500px;
-    background-color: rgb(20, 95, 141);
-    border: 3px solid black;
+    background-image: linear-gradient(to right, rgba(246, 142, 50, 0.824), rgb(63, 130, 217));
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     margin-top: 20px;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    
 }
 
 /* Display for answers and numbers */
@@ -46,8 +56,8 @@ div #display {
     box-sizing: border-box;
     width: 360px;
     height: 85px;
-    background-color: white;
-    border: 3px solid black;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     margin-top: 20px;
 }
@@ -80,19 +90,45 @@ div #display {
     margin-top: 30px;
     width: 360px;
     display: flex;
-    gap: 25px;
+    gap: 8px;
     flex-wrap: wrap;
 }
 
 button {
-    height: 50px;
-    width: 70px;
+    height: 60px;
+    width: 80px;
     background-color: rgb(186, 83, 100);
-    box-shadow: 0 4px 10px rgba(107, 107, 107, 0.4);
+    border: none;
     border-radius: 10px;
     font: inherit;
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    cursor: pointer;
     flex: 1 0 70px;
+}
+
+button[data-number] {
+    background-color: white;
+}
+
+button[data-op] {
+    background-color: rgb(217, 166, 0);
+}
+
+button[data-op = "equal"] {
+    background-color: green;
+}
+
+
+button[data-op="point"] {
+    background-color: white;
+}
+
+
+button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
 #twice {
