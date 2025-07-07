@@ -108,7 +108,7 @@ button {
 }
 
 button[data-number] {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.763);
 }
 
 button[data-op] {
@@ -121,7 +121,7 @@ button[data-op = "equal"] {
 
 
 button[data-op="point"] {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.763);
 }
 
 
