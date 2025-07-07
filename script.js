@@ -73,17 +73,25 @@ buttons.forEach((button) => {
                     display("-", 1);
                 }
                 else if (+num1 > 0) {
-                    text1.textContent = "-" + text1.textContent;
+                    if (text1.textContent != "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0") {
+                        text1.textContent = "-" + text1.textContent;
+                    } else {
+                        text1.textContent = "-" + num1;
+                    }
                     num1 = "-" + num1;
                 } else if (num1.includes("-")) {
-                    text1.textContent = text1.textContent.slice(1,);
+                    if (text1.textContent != "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0") {
+                        text1.textContent = text1.textContent.slice(1,);
+                    } else {
+                        text1.textContent = num1.slice(1,);
+                    }
                     num1 = num1.slice(1,);
                 }
             } else if (op == "sub") {
                 op = "add";
                 index = text1.textContent.indexOf("-");
                 text1.textContent = text1.textContent.slice(0, index) + "+" + text1.textContent.slice(index + 1);
-            } else if (num1 != "") {
+            } else if (num1 != "" && op != "") {
                 if (num2 == "") {
                     num2 += "-";
                     display("-", 1);
