@@ -40,7 +40,7 @@ h1 {
     display: flex;
     width: 400px;
     height: 500px;
-    background-image: linear-gradient(to right, rgba(246, 142, 50, 0.824), rgb(63, 130, 217));
+    background-image: linear-gradient(rgba(246, 142, 50, 0.824), rgb(63, 130, 217));
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     margin-top: 20px;
@@ -99,7 +99,7 @@ button {
     background-color: rgb(186, 83, 100);
     border: none;
     border-radius: 10px;
-    font: inherit;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 25px;
     font-weight: 500;
     cursor: pointer;
