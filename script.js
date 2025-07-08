@@ -72,7 +72,7 @@ buttons.forEach((button) => {
                     num1 += "-";
                     display("-", 1);
                 }
-                else if (+num1 > 0) {
+                else if (!num1.includes("-")) {
                     if (text1.textContent != "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0") {
                         text1.textContent = "-" + text1.textContent;
                     } else {
@@ -123,10 +123,6 @@ buttons.forEach((button) => {
             }
         // Moving on the operator
         } else if (button.dataset.op && num2 === "" && button.dataset.op != "point" && button.dataset.op != "equal") {
-            if (!first) {
-                display(num1, 1);
-            }
-
             if (op == "") {
                 display(` ${button.textContent} `, 1);
             } else {
@@ -137,11 +133,9 @@ buttons.forEach((button) => {
             op = button.dataset.op;
         // Finishing with the last number
         } else if (op != "" && (button.dataset.number || button.dataset.op == "point")) {
-            if (button.dataset.number) {
-                if ( num2 !== "" || button.dataset.number != 0) {
-                    num2 += button.dataset.number;
-                    display(button.dataset.number, 1);
-                }    
+            if (button.dataset.number && num2[0] != "0") {
+                num2 += button.dataset.number;
+                display(button.dataset.number, 1);
             } else if (button.dataset.op == "point" && !num2.includes(".") ) {
                 if (num2 == 0 || num2.length == 0) {
                     display("0.");
@@ -154,8 +148,8 @@ buttons.forEach((button) => {
         } else if (button.dataset.op == "equal" && num2.length != 0) {
             let ans = operate(op, +num1, +num2);
 
-            text1.textContent = "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0";
             text2.textContent = ans;
+            text1.textContent = ans;
             num1 = ans;
             num2 = "";
             op = "";
