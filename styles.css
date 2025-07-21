@@ -53,7 +53,7 @@ h1 {
 
 /* Display for answers and numbers */
 div #display {
-    overflow: scroll;
+    overflow: auto;
     box-sizing: border-box;
     width: 360px;
     height: 85px;
